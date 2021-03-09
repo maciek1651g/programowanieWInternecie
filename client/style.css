@@ -15,13 +15,18 @@ body
 	margin: 0px 5px;
 }
 
-.menu
+.nav
 {
 	background-color: #333;
 	margin: 0px 5px;
+}
+
+.menu
+{
+	list-style-type: none;
+	margin:0;
 	display: flex;
 	justify-content: space-around;
-	list-style-type: none;
 }
 
 .footer
@@ -38,16 +43,12 @@ body
     align-items: center;
 }
 
-.li
+
+.link
 {
 	text-align: center;
 	margin:0px;
 	width: 200px;
-}
-
-
-.link
-{
 	display: block;
 	padding: 20px;
 	color: white;

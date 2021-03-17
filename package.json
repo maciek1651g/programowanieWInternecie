@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/maciek1651g/programowanieWInternecie#readme",
   "dependencies": {
+    "compression": "^1.7.4",
     "express": "^4.17.1"
   }
 }

@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 
 
 // Compress all HTTP responses
-//app.use(compression())
+app.use(compression())
 //Routing
 app.use(express.static('client'));
 

@@ -12,8 +12,15 @@ function changePicture(str)
 	if(isStartGame==false || (str && str=="Win!"))
 	{
 		var src = document.getElementById("picture").value;
-		var img = '<img class="obraz" src="'+getImageSource(src)+'" alt="'+src+'" />';
-		document.getElementById("board").innerHTML = img;
+		if(src==="")
+		{
+			document.getElementById("board").innerHTML = '<p>By zagrać w puzzle wybierz obrazek z listy powyżej, dostosuj poziom trudności i kliknij start.</p>';
+		}
+		else
+		{
+			var img = '<img class="obraz" src="'+getImageSource(src)+'" alt="'+src+'" />';
+			document.getElementById("board").innerHTML = img;
+		}
 	}
 }
 
@@ -128,8 +135,12 @@ function stopGame()
 {
 	document.getElementById("startButton").setAttribute("onclick", "startGame()");
 	document.getElementById("startButton").innerText = "Start!"
+	document.getElementById("descriptionButtonStartStop").innerText = "Rozpocznij grę:"
 	var board = document.getElementById("board")
-	document.getElementById("picture").value = board.getAttribute("data-imgName");
+	if(board.getAttribute("data-imgName")!==null)
+	{
+		document.getElementById("picture").value = board.getAttribute("data-imgName");
+	}
 	board.removeAttribute("data-imgName");
 	changePicture("Win!");
 	placeEmptySquare = [];
@@ -139,8 +150,11 @@ function stopGame()
 
 function startGame()
 {
-	var difficult = parseInt(document.getElementById("dificulty").value);
 	var src = document.getElementById("picture").value;
+	if(src==="")
+		return;
+	
+	var difficult = parseInt(document.getElementById("dificulty").value);
 	var board = document.getElementById("board");
 	board.setAttribute("data-imgName", src);
 	src = getImageSource(src);
@@ -149,6 +163,7 @@ function startGame()
 	
 	document.getElementById("startButton").setAttribute("onclick", "stopGame()");
 	document.getElementById("startButton").innerText = "Stop"
+	document.getElementById("descriptionButtonStartStop").innerText = "Zatrzymaj grę:"
 	
 	//https://stackoverflow.com/questions/481351/programmatically-clip-cut-image-using-javascript
 	//https://stackoverflow.com/questions/21933043/split-an-image-using-javascript?fbclid=IwAR33I4zOA0Dy6PFwSTetyjYPBK37xaF44Z83g4j0i64qNfjdAToiBhnTYNY

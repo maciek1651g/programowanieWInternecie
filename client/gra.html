@@ -9,13 +9,13 @@
 	</head>
 	<body>
 		<noscript>Żeby zagrać w grę musisz włączyć obsługę skryptów w twojej przeglądarce</noscript>
-		<dialog id="dialogBox" class="dialogBox">
+		<div id="dialogBox" class="dialogBox">
 			<div class="infoBox">
 				<h2>Gratulacje wygrałeś!</h2>
 				<h3>Zmieniaj poziomy trudności oraz grafiki i baw się dobrze.</h3>
 				<button class="dialogButton" onclick="closeDialogBox()">Powrót</button>
 			</div>
-		</dialog>
+		</div>
 		<header class="header">
 			<div class="banner">
 				<h1>Programowanie w Internecie</h1>
@@ -35,11 +35,12 @@
 					<div class="description">
 						<p class="descriptionP">Obrazek:</p>
 						<p class="descriptionP">Poziom trudności:</p>
-						<p class="descriptionP">Rozpocznij grę:</p>
+						<p id="descriptionButtonStartStop" class="descriptionP">Rozpocznij grę:</p>
 					</div>
 					<div class="control">
 						<select id="picture" class="picture" name="picture" onchange="changePicture()">
-						  <option value="kotek" selected>Kotek</option>
+						  <option value="" selected></option>
+						  <option value="kotek">Kotek</option>
 						  <option value="piesek">Piesek</option>
 						  <option value="konik">Konik</option>
 						</select>
@@ -51,7 +52,8 @@
 						<button id="startButton" class="startButton" onclick="startGame()">Start!</button>
 					</div>
 					<div id="board" class="board">
-						<img class="obraz" src="./img/kotek.webp" alt="kotek" />
+						<p>By zagrać w puzzle wybierz obrazek z listy powyżej, dostosuj poziom trudności i kliknij start.</p>
+						<!--<img class="obraz" src="./img/kotek.webp" alt="kotek"/> -->
 					</div>
 				</div>
 			</section>

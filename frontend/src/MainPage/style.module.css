@@ -268,8 +268,8 @@ img
 {
 	.board
 	{
-		width: 340px;
-		height: 340px;
+		transform: scale(0.68);
+		font-size: 30px;
 	}
 
 	.startButton, .dificulty, .picture, .descriptionP

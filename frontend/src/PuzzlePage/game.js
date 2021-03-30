@@ -218,6 +218,7 @@ function startGame()
 			board.appendChild(div);
 		}	
 	}
+
 	placeEmptySquare[placeEmptySquare.length-1][placeEmptySquare.length-1] = 1;
 	board.removeChild(board.lastChild);
 	shufflingPicture();

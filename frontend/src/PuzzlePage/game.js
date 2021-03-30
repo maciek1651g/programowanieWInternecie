@@ -1,6 +1,6 @@
-placeEmptySquare = [];
-positionsTab = [];
-isStartGame = false;
+var placeEmptySquare = [];
+var positionsTab = [];
+var isStartGame = false;
 
 
 const getImageSource = text => "./img/" + text + ".jpg";
@@ -68,7 +68,7 @@ function sprWin(i, j)
 			var right_i = parseInt(child[k].getAttribute("data-right-possition-i"));
 			var right_j = parseInt(child[k].getAttribute("data-right-possition-j"));
 			
-			if(current_i!=right_i || current_j!=right_j)
+			if(current_i!==right_i || current_j!==right_j)
 			{
 				return;
 			}	
@@ -110,10 +110,10 @@ function shufflingPicture()
 		var a = random(0, child.length);
 		var b = random(0, child.length);
 		
-		a_i = parseInt(child[a].getAttribute("data-possition-i"));
-		a_j = parseInt(child[a].getAttribute("data-possition-j"));
-		b_i = parseInt(child[b].getAttribute("data-possition-i"));
-		b_j = parseInt(child[b].getAttribute("data-possition-j"));
+		let a_i = parseInt(child[a].getAttribute("data-possition-i"));
+		let a_j = parseInt(child[a].getAttribute("data-possition-j"));
+		let b_i = parseInt(child[b].getAttribute("data-possition-i"));
+		let b_j = parseInt(child[b].getAttribute("data-possition-j"));
 		moveElement(child[a], b_i, b_j)
 		moveElement(child[b], a_i, a_j)
 	}
@@ -136,8 +136,12 @@ function random(a, b)
 function stopGame()
 {
 	const startButton = $("startButton");
-	startButton.setAttribute("onclick", "startGame()");
-	startButton.innerText = "Start!"
+
+	const newElement = startButton.cloneNode(true);
+	newElement.innerText = "Start";
+	newElement.addEventListener("click", startGame, false);
+	startButton.parentNode.replaceChild(newElement,startButton);
+
 	$("descriptionButtonStartStop").innerText = "Rozpocznij grę:"
 	var board = document.getElementById("board")
 	if(board.getAttribute("data-imgName")!==null)
@@ -167,8 +171,12 @@ function startGame()
 	var size = 540/difficult;
 	
 	const startButton = $("startButton");
-	startButton.setAttribute("onclick", "stopGame()");
-	startButton.innerText = "Stop"
+
+	const newElement = startButton.cloneNode(true);
+	newElement.innerText = "Stop";
+	newElement.addEventListener("click", stopGame, false);
+	startButton.parentNode.replaceChild(newElement,startButton);
+
 	$("descriptionButtonStartStop").innerText = "Zatrzymaj grę:"
 	
 	//https://stackoverflow.com/questions/481351/programmatically-clip-cut-image-using-javascript
@@ -212,3 +220,7 @@ function startGame()
 	board.removeChild(board.lastChild);
 	shufflingPicture();
 }
+
+const toExport = {changePicture, startGame, closeDialogBox};
+
+export default toExport;

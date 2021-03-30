@@ -12,7 +12,7 @@ const App = () => {
           <Route exact path="/">
             <MainPage />
           </Route>
-          <Route exact path="/puzzle">
+          <Route exact path="/puzzle/">
             <PuzzlePage />
           </Route>
         </Switch>

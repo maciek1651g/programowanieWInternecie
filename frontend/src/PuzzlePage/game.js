@@ -1,3 +1,5 @@
+import styles from './../MainPage/style.module.css'
+
 var placeEmptySquare = [];
 var positionsTab = [];
 var isStartGame = false;
@@ -18,7 +20,7 @@ function changePicture(str)
 		}
 		else
 		{
-			var img = '<img class="obraz" src="'+getImageSource(src)+'" alt="'+src+'" />';
+			var img = '<img class="'+styles.obraz+'" src="'+getImageSource(src)+'" alt="'+src+'" />';
 			board.innerHTML = img;
 		}
 	}
@@ -202,7 +204,7 @@ function startGame()
 			positionsTab[i][j]["left"] = left;
 			
 			var div = document.createElement('div');
-			div.classList.add("partPicture");
+			div.classList.add(styles.partPicture);
 			div.setAttribute("data-possition-i", i);
 			div.setAttribute("data-possition-j", j);
 			div.setAttribute("data-right-possition-i", i);

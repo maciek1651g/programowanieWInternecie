@@ -1,12 +1,13 @@
 import Game from "./game";
+import styles from './../MainPage/style.module.css'
 
 const DialogBox = () => {
     return (
-        <div id="dialogBox" className="dialogBox">
-			<div className="infoBox">
+        <div id="dialogBox" className={styles.dialogBox}>
+			<div className={styles.infoBox}>
 				<h2>Gratulacje wygrałeś!</h2>
 				<h3>Zmieniaj poziomy trudności oraz grafiki i baw się dobrze.</h3>
-				<button className="dialogButton" onClick={Game.closeDialogBox}>Powrót</button>
+				<button className={styles.dialogButton} onClick={Game.closeDialogBox}>Powrót</button>
 			</div>
 		</div>
     )

@@ -28,6 +28,7 @@ body
 	padding:0;
 	height: 100%;
 	display: flex;
+	align-items: center;
 	justify-content: space-around;
 	text-align: center;
 }
@@ -53,7 +54,6 @@ body
 .li
 {
 	width: 20%;
-	height: 100%;
 }
 
 .link
@@ -65,11 +65,11 @@ body
 	margin:0px;
 	width: 100%;
 	height: 100%;
-	display: block;
 	color: white;
 	text-decoration: none;
 	font-size: 20px;
 	padding: 15px 0;
+	box-sizing: border-box;
 }
 
 .li:hover
@@ -276,10 +276,16 @@ img
 	{
 		margin: 2px;
 		padding: 20px;
+		font-size: 15px;
 	}
 
 	.description, .control
 	{
 		width: 100%;
+	}
+
+	.li
+	{
+		height: 76px;
 	}
 }

@@ -10,8 +10,8 @@ const port = process.env.PORT || 3000;
 // Compress all HTTP responses
 app.use(compression())
 //Routing
-//app.use(express.static('client', {maxAge: 86400000}));
-app.use(express.static('client'));
+app.use(express.static('client', {maxAge: 3600000}));
+
 app.all("*", function (req, res, next) {
 	res.sendFile(path.join(__dirname+'/client/index.html'))
  });

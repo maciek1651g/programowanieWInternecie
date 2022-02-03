@@ -1,3 +1,2 @@
-# programowanieWInternecie
-Repozytorium strony na zajęcia z programowania w internecie
-https://maciejdominiak.herokuapp.com/
+# Puzzle Game
+Aplikacja z grą w puzzle

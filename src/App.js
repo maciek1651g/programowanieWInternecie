@@ -8,7 +8,7 @@ const App = () => {
         <Fragment>
             <Router>
                 <Switch>
-                    <Route exact path="/">
+                    <Route path="*">
                         <PuzzlePage />
                     </Route>
                 </Switch>

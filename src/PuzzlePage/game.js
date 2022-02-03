@@ -4,7 +4,7 @@ let placeEmptySquare = [];
 let positionsTab = [];
 let isStartGame = false;
 
-const getImageSource = (text) => "/puzzle/img/" + text + ".jpg";
+const getImageSource = (text) => "/puzzleGame/puzzle/img/" + text + ".jpg";
 const $ = (id) => document.getElementById(id);
 
 function changePicture(str) {
